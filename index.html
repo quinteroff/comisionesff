@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de Comisiones</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Login -->
+<section id="login-section" class="login-section">
+  <h2>Ingrese la contraseña para acceder</h2>
+  <input type="password" id="password-input" placeholder="Contraseña">
+  <button id="login-btn" class="btn-blue">Entrar</button>
+  <p id="login-error">Contraseña incorrecta</p>
+</section>
+
+<!-- Calculadora -->
+<div class="app-container">
+  <div class="calculator-card" id="calculator-card">
+    <header class="header">
+      <h1>Calculadora de Comisiones Inmobiliarias</h1>
+      <p>Calcula automáticamente lo que debes pagar a la compañía</p>
+    </header>
+
+    <div class="main-grid">
+      <section class="form-section">
+        <h2>Nueva Comisión</h2>
+        <label>Monto de la Comisión ($)</label>
+        <input type="number" id="comision" placeholder="1000.00" step="0.01" min="0">
+
+        <label>Formato de Asesor</label>
+        <select id="formato">
+          <option value="50">50% - Formato Básico</option>
+          <option value="60" selected>60% - Formato Estándar</option>
+          <option value="70">70% - Formato Avanzado</option>
+          <option value="80">80% - Formato Premium</option>
+        </select>
+
+        <div class="buttons">
+          <button id="calcular" class="btn-blue">Calcular</button>
+          <button id="limpiar" class="btn-gray">Limpiar</button>
+        </div>
+      </section>
+
+      <section id="resultado" class="resultado-section">
+        <p class="placeholder">Ingresa los datos y haz clic en "Calcular" para ver el resultado</p>
+      </section>
+    </div>
+
+    <section id="historial" class="historial-section"></section>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
