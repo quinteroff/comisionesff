@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de Comisiones Inmobiliarias</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Login -->
+<section id="login-section" class="login-section">
+  <div class="login-card">
+    <h2>🔐 Acceso Seguro</h2>
+    <div class="input-group">
+      <input type="password" id="password-input" placeholder="Ingresa tu contraseña">
+    </div>
+    <button id="login-btn">Ingresar</button>
+    <p id="login-error">❌ Contraseña incorrecta. Intenta nuevamente.</p>
+  </div>
+</section>
+
+<!-- Calculadora -->
+<div class="app-container" id="app-container">
+  <div class="calculator-card">
+    <header class="header">
+      <h1>Calculadora de Comisiones Inmobiliarias</h1>
+      <p>Calcula automáticamente lo que debes pagar a la compañía</p>
+    </header>
+
+    <div class="main-grid">
+      <section class="form-section">
+        <h2>Nueva Comisión</h2>
+        
+        <div class="input-group">
+          <label>Monto de la Comisión ($)</label>
+          <input type="number" id="comision" placeholder="1000.00" step="0.01" min="0">
+        </div>
+
+        <div class="input-group">
+          <label>Formato de Asesor</label>
+          <select id="formato">
+            <option value="50">50% - Formato Básico</option>
+            <option value="60" selected>60% - Formato Estándar</option>
+            <option value="70">70% - Formato Avanzado</option>
+            <option value="80">80% - Formato Premium</option>
+          </select>
+        </div>
+
+        <div class="buttons">
+          <button id="calcular" class="btn-primary">🧮 Calcular</button>
+          <button id="limpiar" class="btn-secondary">🗑️ Limpiar</button>
+        </div>
+      </section>
+
+      <section class="resultado-section">
+        <div class="placeholder" id="placeholder">
+          Ingresa los datos y haz clic en "Calcular" para ver el resultado
+        </div>
+        
+        <div class="resultado-content" id="resultado-content">
+          <div class="resultado-header">
+            <h3>Resultado del Cálculo</h3>
+            <button class="export-btn" id="export-btn">📄 Exportar</button>
+          </div>
+
+          <div class="desglose">
+            <div class="desglose-item">
+              <h4>Datos de Entrada</h4>
+              <div id="datos-entrada"></div>
+            </div>
+            
+            <div class="desglose-item">
+              <h4>Desglose Detallado</h4>
+              <div id="desglose-calculo"></div>
+            </div>
+          </div>
+
+          <div class="totales">
+            <div class="total-card total-pagar">
+              <h4>💸 Total a Pagar</h4>
+              <div class="amount" id="total-pagar">$0.00</div>
+            </div>
+            <div class="total-card total-ganancia">
+              <h4>💰 Tu Ganancia</h4>
+              <div class="amount" id="total-ganancia">$0.00</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section class="historial-section" id="historial-section" style="display: none;">
+      <div class="historial-header">
+        <h3>Historial de Cálculos</h3>
+        <button class="btn-danger" id="limpiar-historial">🗑️ Limpiar Historial</button>
+      </div>
+      <div class="historial-grid" id="historial-grid"></div>
+    </section>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
